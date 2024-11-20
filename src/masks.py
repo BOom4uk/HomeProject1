@@ -4,7 +4,7 @@ def get_mask_card_number(number_of_card: str) -> str:
         masked_card = number_of_card[:5] + "******" + number_of_card[12:]
         return masked_card
     else:
-        print("Номер карты должен содержать 16 цифр")
+        return "Номер карты должен содержать 16 цифр"
 
 
 def get_mask_account(number_of_account: str) -> str:
@@ -13,4 +13,4 @@ def get_mask_account(number_of_account: str) -> str:
         masked_account = "**" + number_of_account[3:]
         return masked_account
     else:
-        print("Неверный номер счёта")
+        return "Неверный номер счёта"
