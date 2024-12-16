@@ -22,10 +22,13 @@ def mask_account_card(number_of_card_or_account: str) -> str:
     elif type_of_card_or_account == "Счет":
         masked_number = get_mask_account(number)
     else:
-        return "Неизвестный тип карты или счета"
+        raise Exception("Неизвестный тип карты или счета")
 
     return f"{type_of_card_or_account} {masked_number}"
 
 
 def get_date(date: str) -> str:
-    return f"{date[8:10]}.{date[5:7]}.{date[0:4]}"
+    if len(date) > 5:
+        if date[4] == '-' and date[7] == '-':
+            return f"{date[8:10]}.{date[5:7]}.{date[0:4]}"
+    raise Exception("Неизвестный тип даты")
