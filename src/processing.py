@@ -4,7 +4,7 @@ def filter_by_state(list_of_dicts: list, parameter: str = "EXECUTED") -> list:
     изменён на указанный ключ"""
     score = 0
     for keys in list_of_dicts:
-        if 'state' in keys:
+        if "state" in keys:
             score += 1
     print(score)
     if score == len(list_of_dicts) and score != 0:
@@ -20,7 +20,7 @@ def sort_by_date(list_of_dicts: list, is_sort: bool = True) -> list:
     Возвращает список, отсортированный по дате"""
     score = 0
     for keys in list_of_dicts:
-        if 'state' in keys:
+        if "state" in keys:
             score += 1
         if score == len(list_of_dicts) and score != 0:
             if isinstance(list_of_dicts, list) and isinstance(is_sort, bool):
