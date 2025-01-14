@@ -10,18 +10,20 @@ def filter_by_currency(my_list: list, currency: str) -> Iterator:
     else:
         raise Exception("Некорретные входные данные")
 
+
 def transaction_descriptions(my_list: list) -> Iterator:
     """Генератор, который принимает список словарей с транзакциями
-        и возвращает описание каждой операции по очереди."""
+    и возвращает описание каждой операции по очереди."""
     result = (i.get("description") for i in my_list)
     for x in result:
         yield x
 
+
 def card_number_generator(start_number, int, end_number: int) -> Iterator:
     """Генератор выдает номера банковских карт в формате XXXX XXXX XXXX XXXX,
-        где X — цифра номера карты. Генератор может сгенерировать номера карт
-        в заданном диапазоне от 0000 0000 0000 0001 до 9999 9999 9999 9999.
-        Принимает начальное и конечное значения для генерации диапазона номеров."""
+    где X — цифра номера карты. Генератор может сгенерировать номера карт
+    в заданном диапазоне от 0000 0000 0000 0001 до 9999 9999 9999 9999.
+    Принимает начальное и конечное значения для генерации диапазона номеров."""
 
     if not (isinstance(start_number, int) and isinstance(end_number, int)):
         raise Exception("Начало и конец должны быть целыми числами")

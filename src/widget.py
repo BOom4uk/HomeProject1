@@ -29,6 +29,6 @@ def mask_account_card(number_of_card_or_account: str) -> str:
 
 def get_date(date: str) -> str:
     if len(date) > 5:
-        if date[4] == '-' and date[7] == '-':
+        if date[4] == "-" and date[7] == "-":
             return f"{date[8:10]}.{date[5:7]}.{date[0:4]}"
     raise Exception("Неизвестный тип даты")
