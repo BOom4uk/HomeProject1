@@ -81,6 +81,7 @@ def test_transaction_descriptions_with_fixture(generator_fixture):
 def test_transaction_descriptors_with_empty():
     assert list(transaction_descriptions([])) == []
 
+
 @pytest.mark.parametrize(
     "my_list, currency, expected",
     [
